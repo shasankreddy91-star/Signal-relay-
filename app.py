@@ -86,7 +86,7 @@ def loop():
 
 threading.Thread(target=loop, daemon=True).start()
 
-@app.get("/signal")
+@app.get(”/signal”)
 def get_signal():
     # Minimal payload the bot needs
     return {"signal": latest.get("signal","WAIT"), "confidence": confidence(latest), "meta": latest}
